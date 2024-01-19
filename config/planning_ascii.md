@@ -32,30 +32,33 @@ Crazy stuff that I am yet to decide on:
 
 # Layer: DEFAULT_NORMAL
 Changes:
-TMUX: Tmux prefix(ctrl+a), on both sides thumb cluster.
-NUM: layer toggle to number layer on left thumb.
-LGUI and LGUI: (Macos CMD) on both sides thumb cluster.
-Mod-tap ESC and quote on both sides: Tap for ESC and quote, hold for CTRL.
+- TMUX: Tmux prefix(ctrl+a), on both sides thumb cluster.
+- NUM: layer toggle to number layer on left thumb.
+- LGUI and LGUI: (Macos CMD) on both sides thumb cluster.
+- Mod-tap ESC and quote on both sides: Tap for ESC and quote, hold for CTRL.
   - experimenting with default mod-tap and hold-tap behaviour.
-ltsym: Momentary layer switch to symbols layer. Again symmetrical.
-up/down/left/right: arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
+- ltsym: Momentary layer switch to symbols layer. Again symmetrical.
+- up/down/left/right: arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
 
-    ------------------------------------------------------------------------           --------------------------------------------------------------------------
-    |   =/+     |    1    |    2    |    3    |    4    |    5    | &tog KP|           |&mo MOD |    6    |    7    |    8    |    9    |    0     |  -/_       |
-    |   TAB     |    Q    |    W    |    E    |    R    |    T    |  None  |           | None   |    Y    |    U    |    I    |    O    |    P     |  \/|       |
-    |&mt LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC '/"|
-    |  LSHIFT   |    Z    |    X    |    C    |    V    |    B    |---------           -------  |    N    |    M    |    ,    |    .    |    /     |  RSHIFT    |
-    |   fn      |    ~    | &trans  |  &trans |  ltsym  |----------                           ----------|  ltsym  | &trans  |   [/{   |   ]/}      |  fn        |
-    ------------------------------------------------------------------------           --------------------------------------------------------------------------
 
-                                                                       Thumb Cluster
-                                                      -----------------              ------------------
-                                                      | TMUX | LALT |                | ESC | TMUX |
-                                              -------------------------              ---------------------------
-                                              |       |       | HOME  |              | PG UP |        |         |
-                                              | BSPC  |  NUM  |--------              --------|  ENTER |  SPACE  |
-                                              |       |       | LGUI  |              | RGUI  |        |         |
-                                              -------------------------              ---------------------------
+
+------------------------------------------------------------------------           --------------------------------------------------------------------------
+|   =/+     |    1    |    2    |    3    |    4    |    5    | &tog KP|           |&mo MOD |    6    |    7    |    8    |    9    |    0     |  -/_       |
+|   TAB     |    Q    |    W    |    E    |    R    |    T    |  None  |           | None   |    Y    |    U    |    I    |    O    |    P     |  \/|       |
+|&mt LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC '/"|
+|  LSHIFT   |    Z    |    X    |    C    |    V    |    B    |---------           -------  |    N    |    M    |    ,    |    .    |    /     |  RSHIFT    |
+|   fn      |    ~    | &trans  |  &trans |  ltsym  |----------                           ----------|  ltsym  | &trans  |   [/{   |   ]/}      |  fn        |
+------------------------------------------------------------------------           --------------------------------------------------------------------------
+                                                                   Thumb Cluster
+                                                  -----------------              ------------------
+                                                  | TMUX | LALT |                | ESC | TMUX |
+                                          -------------------------              ---------------------------
+                                          |       |       | HOME  |              | PG UP |        |         |
+                                          | BSPC  |  NUM  |--------              --------|  ENTER |  SPACE  |
+                                          |       |       | LGUI  |              | RGUI  |        |         |
+                                          -------------------------              ---------------------------
+
+
 
 # Layer: DEFAULT_SYMBOLS
 Changes:
