@@ -1,11 +1,5 @@
-//                                                                        Thumb Cluster
-//                                                       -----------------           ------------------
-//                                                               | 4 | 5 |           | 5  |  4 |
-//                                               -------------------------           ---------------------------
-//                                               |       |       | 0  |              | 0  |        |        |
-//                                               | 1     | 2     |--------           -----|  2     |  1     |
-//                                               |       |       | 3   |              | 3 |        |        |
-//                                               -------------------------           ---------------------------
+# Research
+To find the perfect layout
 
 # Major things to consider
 - with homerow mods or without
@@ -28,6 +22,15 @@
     - numrow: seems better but would then need layer switcher on both side or toggle
         - numword seems better choice, but space cancel would be problematic. in case I want to write spaces around operators.
 - thumb cluster
+
+                                                                        Thumb Cluster
+                                                       -----------------           ------------------
+                                                               | 4 | 5 |           | 5  |  4 |
+                                               -------------------------           ---------------------------
+                                               |       |       | 0  |              | 0  |        |        |
+                                               | 1     | 2     |--------           -----|  2     |  1     |
+                                               |       |       | 3   |              | 3 |        |        |
+                                               -------------------------           ---------------------------
     - left:  1(bspce | hold to activate layer), 2(), 3(), 4(tmux prefix), 5()
     - right: 1(space | hold to activate layer), 2(enter), 3(), 4(tmux prefix), 5()
  
