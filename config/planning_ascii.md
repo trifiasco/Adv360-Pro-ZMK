@@ -30,9 +30,7 @@ Crazy stuff that I am yet to decide on:
 4. mods layer:             (momentary layer):     (red) Came with the keyboard. No change. kinesis mods
 5. magic layer:            (momentary layer):     (pink) fn + nav keys + Macos shortcuts + volume keys
 
-==============================================================================================================================================================
-Layer: DEFAULT_NORMAL
-Layer: DEFAULT_NORMAL
+# Layer: DEFAULT_NORMAL
 Changes:
 TMUX: Tmux prefix(ctrl+a), on both sides thumb cluster.
 NUM: layer toggle to number layer on left thumb.
@@ -42,13 +40,13 @@ Mod-tap ESC and quote on both sides: Tap for ESC and quote, hold for CTRL.
 ltsym: Momentary layer switch to symbols layer. Again symmetrical.
 up/down/left/right: arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
 
-    -----------------------------------------------------------------------           ---------------------------------------------------------------------
+    ------------------------------------------------------------------------           --------------------------------------------------------------------------
     |   =/+     |    1    |    2    |    3    |    4    |    5    | &tog KP|           |&mo MOD |    6    |    7    |    8    |    9    |    0     |  -/_       |
     |   TAB     |    Q    |    W    |    E    |    R    |    T    |  None  |           | None   |    Y    |    U    |    I    |    O    |    P     |  \/|       |
     |&mt LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC '/"|
     |  LSHIFT   |    Z    |    X    |    C    |    V    |    B    |---------           -------  |    N    |    M    |    ,    |    .    |    /     |  RSHIFT    |
     |   fn      |    ~    | &trans  |  &trans |  ltsym  |----------                           ----------|  ltsym  | &trans  |   [/{   |   ]/}      |  fn        |
-    ----------------------------------------------------                                                ----------------------------------------------------
+    ------------------------------------------------------------------------           --------------------------------------------------------------------------
 
                                                                        Thumb Cluster
                                                       -----------------              ------------------
@@ -59,9 +57,7 @@ up/down/left/right: arrow keys are moved to the magic layer in place of the hjkl
                                               |       |       | LGUI  |              | RGUI  |        |         |
                                               -------------------------              ---------------------------
 
-==============================================================================================================================================================
-Layer: DEFAULT_SYMBOLS
-Layer: DEFAULT_SYMBOLS
+# Layer: DEFAULT_SYMBOLS
 Changes:
  - Top row symbols are moved down one row. The order doesn't change, so no learning curve. Just a little easier to reach.
  - Frequently used symbols are moved to the home row. Symmetrical braces and brackets. 
@@ -83,10 +79,7 @@ Changes:
                                               |       |       | LGUI  |              | RGUI  |        |         |
                                               -------------------------              ---------------------------
 
-==============================================================================================================================================================
-Layer: NUMBER
-Layer: NUMBER
-NUM
+# Layer: NUMBER
 Numbers on the home row.
 With additional 3 keys: J, K, Shift+G
  - To accomodate the vim vertical navigation without switching from number and default layer. I constantly do like "5j" or "5k" to move 5 lines up or down. Also "34G" to go to the line number 34
@@ -108,9 +101,7 @@ With additional 3 keys: J, K, Shift+G
                                               |       |       | LGUI  |              | RGUI  |        |         |
                                               -------------------------              ---------------------------
 
-=============================================================================================================================================================
-Magic Layer: fn + nav keys + Macos shortcuts + volume keys
-Magic Layer: fn + nav keys + Macos shortcuts + volume keys
+# Magic Layer: fn + nav keys + Macos shortcuts + volume keys
 Changes:
 - arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
 - vol up/down: to top right column
