@@ -32,11 +32,11 @@ Crazy stuff that I am yet to decide on:
 
 # Layer: DEFAULT_NORMAL
 Changes:
-- TMUX: Tmux prefix(ctrl+a), on both sides thumb cluster.
+- TMUX: Tmux prefix(ctrl+a), on both sides.
 - NUM: layer toggle to number layer on left thumb.
-- LGUI and LGUI: (Macos CMD) on both sides thumb cluster.
+- LGUI, LALT and RGUI, RALT: (Macos CMD, OPT) on both sides thumb cluster.
 - Mod-tap ESC and quote on both sides: Tap for ESC and quote, hold for CTRL.
-  - experimenting with default mod-tap and hold-tap behaviour.
+  - experimenting with default home row mod behaviour
 - ltsym: Momentary layer switch to symbols layer. Again symmetrical.
 - up/down/left/right: arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
 
@@ -45,17 +45,17 @@ Changes:
 ------------------------------------------------------------------------           --------------------------------------------------------------------------
 |   =/+     |    1    |    2    |    3    |    4    |    5    | &tog KP|           |&mo MOD |    6    |    7    |    8    |    9    |    0     |  -/_       |
 |   TAB     |    Q    |    W    |    E    |    R    |    T    |  None  |           | None   |    Y    |    U    |    I    |    O    |    P     |  \/|       |
-|&mt LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC '/"|
+|&hm LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC('/")|
 |  LSHIFT   |    Z    |    X    |    C    |    V    |    B    |---------           -------  |    N    |    M    |    ,    |    .    |    /     |  RSHIFT    |
-|   fn      |    ~    | &trans  |  &trans |  ltsym  |----------                           ----------|  ltsym  | &trans  |   [/{   |   ]/}      |  fn        |
+|   fn      |    ~    | &trans  |  TMUX   |   SYM   |----------                             ----------|   SYM   |  TMUX   |   [/{   |   ]/}    |  fn        |
 ------------------------------------------------------------------------           --------------------------------------------------------------------------
                                                                    Thumb Cluster
                                                   -----------------              ------------------
-                                                  | TMUX | LALT |                | ESC | TMUX |
+                                                  | MOD1  |  MOD2 |              | MOD2  | MOD1 |
                                           -------------------------              ---------------------------
-                                          |       |       | HOME  |              | PG UP |        |         |
+                                          | lt    |       | LALT  |              | RALT  |        |  lt     |
                                           | BSPC  |  NUM  |--------              --------|  ENTER |  SPACE  |
-                                          |       |       | LGUI  |              | RGUI  |        |         |
+                                          | sym   |       | LGUI  |              | RGUI  |        |  sym    |
                                           -------------------------              ---------------------------
 ```
 
@@ -64,6 +64,7 @@ Changes:
 Changes:
  - Top row symbols are moved down one row. The order doesn't change, so no learning curve. Just a little easier to reach.
  - Frequently used symbols are moved to the home row. Symmetrical braces and brackets. 
+ - TAB in place of backspace
 
 ```
     -----------------------------------------------------------------------           ---------------------------------------------------------------------
@@ -74,14 +75,14 @@ Changes:
     |          |        |        |         |         |----------                           ----------|         |         |         |          |          |
     ----------------------------------------------------                                                ----------------------------------------------------
 
-                                                                       Thumb Cluster
-                                                      -----------------              ------------------
-                                                      | TMUX | LALT |                | ESC | TMUX |
-                                              -------------------------              ---------------------------
-                                              |       |       | HOME  |              | PG UP |        |         |
-                                              | BSPC  |  NUM  |--------              --------| ENTER  |  SPACE  |
-                                              |       |       | LGUI  |              | RGUI  |        |         |
-                                              -------------------------              ---------------------------
+                                                                   Thumb Cluster
+                                                  -----------------              ------------------
+                                                  | MOD1  |  MOD2 |              | MOD2  | MOD1 |
+                                          -------------------------              ---------------------------
+                                          |       |       | LALT  |              | RALT  |        |         |
+                                          |  TAB  |  NUM  |--------              --------|  ENTER |  SPACE  |
+                                          |       |       | LGUI  |              | RGUI  |        |         |
+                                          -------------------------              ---------------------------
 ```
 
 # Layer: NUMBER
@@ -94,10 +95,10 @@ Changes:
 ```
     -----------------------------------------------------------------------           ---------------------------------------------------------------------
     |          |    1   |    2   |    3    |    4    |    5    |  None  |           | None |    6    |    7    |    8    |    9    |    0     |          |
-    |          |        |        |    K    |    R    |         |  None  |           | None |         |         |         |         |          |          |
+    |          |        |        |    K    |         |         |  None  |           | None |         |         |         |         |          |          |
     |          |    1   |    2   |    3    |    4    |    5    |  None  |           | None |    6    |    7    |    8    |    9    |    0     |          |
     |          |        |        |  SFT G  |         |         |---------           -------|         |    J    |         |         |          |          |
-    |          |        |        |         |  ltsym  |----------                           ----------|  ltsym  |         |         |          |          |
+    |          |        |        |         |         |----------                           ----------|         |         |         |          |          |
     ----------------------------------------------------                                                ----------------------------------------------------
 
                                                                        Thumb Cluster
@@ -114,18 +115,21 @@ Changes:
 Changes:
 - arrow keys are moved to the magic layer in place of the hjkl keys to mimick vim style navigation.
 - vol up/down: to top right column
-TODO:
+- undo/redo in place of U and R(like vim)
+- select in place of V(like vim V)
 - Copy: In place of Y key(like vim yank)
 - Paste: In place of P key(like vim paste)
 - Cut: In place of X key(like vim cut)
+- Lock: In place of Q
 - Window and space management
+    - mission control, desktop left, down, right: esdf
 
 ```
     -----------------------------------------------------------------------           ---------------------------------------------------------------------
     |    F1    |   F2   |   F3   |   F4    |   F5    |   F6    |  None  |           | None |   F7    |   F8    |   F9    |   F10   |   F11    |  F12     |
-    |   TAB    |        |        |         |         |         |  None  |           | None | selcopy |         |         |         |   paste  |  VOL_UP  |
-    |  LCTRL   |        |        |         |         |         |  None  |           | None |  left   | down    |   up    | right   |          |  VOL_DOWN|
-    |  LSHIFT  |        | selcut |         |         |         |---------           -------|         |         |         |         |          |  RSHIFT  |
+    |   TAB    | lock   |        | msnctrl |   redo  |         |  None  |           | None |  copy   |   undo  |         |         |   paste  |  VOL_UP  |
+    |  LCTRL   |        |dsk lft | dsktop  | dsk rgt |         |  None  |           | None |  left   | down    |   up    | right   |          |  VOL_DOWN|
+    |  LSHIFT  |        |  cut   |         |  sel    |         |---------           -------|         |         |         |         |          |  RSHIFT  |
     |          |        |        |         |         |----------                           ----------|         |         |         |          |          |
     ----------------------------------------------------                                                ----------------------------------------------------
 
