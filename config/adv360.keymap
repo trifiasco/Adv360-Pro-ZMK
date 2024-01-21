@@ -12,7 +12,7 @@
 #define FN 5
 
 #define MOD1    LA(LS(LC(LGUI)))
-#define MOD2    LA(LS(LC))
+#define MOD2    LA(LS(LCTRL))
 #define TMUX    LC(A)
 
 #define MCMSN   LC(UP)
