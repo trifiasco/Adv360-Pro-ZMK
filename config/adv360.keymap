@@ -191,29 +191,28 @@
   keymap {
     compatible = "zmk,keymap";
                                                     // ======================================================================= BASE LAYER =========================================================================
-                                                    // -----------------------------------------------------------------------            ---------------------------------------------------------------------
                                                     // ------------------------------------------------------------------------           --------------------------------------------------------------------------
                                                     // |   =/+     |    1    |    2    |    3    |    4    |    5    | &tog KP|           |&mo MOD |    6    |    7    |    8    |    9    |    0     |  -/_       |
                                                     // |   TAB     |    Q    |    W    |    E    |    R    |    T    |  None  |           | None   |    Y    |    U    |    I    |    O    |    P     |  \/|       |
-                                                    // |&hm LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  &hm RC('/")|
+                                                    // |&hm LC(ESC)|    A    |    S    |    D    |    F    |    G    |  None  |           | None   |    H    |    J    |    K    |    L    |    ;     |  '/"       |
                                                     // |  LSHIFT   |    Z    |    X    |    C    |    V    |    B    |---------           -------  |    N    |    M    |    ,    |    .    |    /     |  RSHIFT    |
-                                                    // |   fn      |    ~    | &trans  |TMUX CMD | LSHIFT  |----------                             ----------| RSHIFT  |TMUX CMD |   [/{   |   ]/}    |  fn        |
+                                                    // |   fn      |    ~    |  LALT   |   MOD2  |   MOD1  |----------                             ----------|  MOD1   |   MOD2  |   [/{   |   ]/}    |  fn        |
                                                     // ------------------------------------------------------------------------           --------------------------------------------------------------------------
                                                     //                                                                    Thumb Cluster
                                                     //                                                   -----------------              ------------------
-                                                    //                                                   | MOD1  |  MOD2 |              | MOD2  | MOD1 |
+                                                    //                                                   |  MOD1  | MOD2 |               |  MOD2  |  MOD1  |
                                                     //                                           -------------------------              ---------------------------
-                                                    //                                           |  lt   | mo_tog | LALT  |             |  RALT  |        |  lt    |
-                                                    //                                           | BSPC  |  NUM   |--------              --------|  ENTER | SPACE  |
-                                                    //                                           |  SYM  |        |mo_togFN|            |mo_togFN|        |  SYM   |
+                                                    //                                           |  lt   | mo_tog |mo_togFN|             |  RALT  |        |  lt    |
+                                                    //                                           | BSPC  |  NUM   |--------              -------- |  ENTER | SPACE  |
+                                                    //                                           |  SYM  |        |  shft  |             |  shft  |        |  SYM   |
                                                     //                                           -------------------------              ---------------------------
     default_layer {
       bindings = <
-        &kp EQUAL       &kp N1       &kp N2      &kp N3            &kp N4     &kp N5    &tog KP                                                                          &mo MOD    &kp N6    &kp N7     &kp N8           &kp N9      &kp N0       &kp MINUS
-        &kp TAB         &kp Q        &kp W       &kp E             &kp R      &kp T     &none                                                                            &none      &kp Y     &kp U      &kp I            &kp O       &kp P        &kp BSLH
-        &hm LCTRL ESC   &kp A        &kp S       &kp D             &kp F      &kp G     &none           &kp MOD1    &kp MOD2 &kp MOD2  &kp MOD1                          &none      &kp H     &kp J      &kp K            &kp L       &kp SEMI     &hm RCTRL SQT
-        &kp LSHFT       &kp Z        &kp X       &kp C             &kp V      &kp B                                 &kp LALT &kp RALT                                               &kp N     &kp M      &kp COMMA        &kp DOT     &kp FSLH     &kp RSHFT
-        &mo FN          &kp GRAVE    &kp CAPS    &hm LGUI TMUX     &kp LSHFT                        &lt SYM BSPC MO_TOG(NUM) MO_TOG(FN) MO_TOG(FN) &kp ENTER &lt SYM SPACE                    &kp RSHFT  &hm RGUI TMUX    &kp LBKT    &kp RBKT     &mo FN
+        &kp EQUAL       &kp N1       &kp N2      &kp N3            &kp N4     &kp N5    &tog KP                                                                              &mo MOD    &kp N6    &kp N7     &kp N8           &kp N9      &kp N0       &kp MINUS
+        &kp TAB         &kp Q        &kp W       &kp E             &kp R      &kp T     &none                                                                                &none      &kp Y     &kp U      &kp I            &kp O       &kp P        &kp BSLH
+        &hm LCTRL ESC   &kp A        &kp S       &kp D             &kp F      &kp G     &none           &kp LCTRL   &kp LGUI   &kp RGUI   &kp RCTRL                          &none      &kp H     &kp J      &kp K            &kp L       &kp SEMI     &kp SQT
+        &kp LSHFT       &kp Z        &kp X       &kp C             &kp V      &kp B                                 MO_TOG(FN) MO_TOG(FN)                                               &kp N     &kp M      &kp COMMA        &kp DOT     &kp FSLH     &kp RSHFT
+        &mo FN          &kp GRAVE    &kp LALT    &kp MOD2          &kp MOD1              &lt SYM BSPC   MO_TOG(NUM) &kp LSHFT  &kp RSHFT  &kp ENTER  &lt SYM SPACE                                &kp MOD1   &kp MOD2         &kp LBKT    &kp RBKT     &mo FN
       >;
     };
 
