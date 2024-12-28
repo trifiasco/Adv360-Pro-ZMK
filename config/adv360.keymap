@@ -4,6 +4,24 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#define DEF 0
+#define NUM 1
+#define FN 2
+#define MOD 3
+
+#define TMX    LC(A)
+#define I3   LALT
+
+
+// Mac specific
+#define MCLCK   LG(LC(Q))
+
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
+&lt {
+    quick_tap_ms = <200>;
+};
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -26,36 +44,55 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      mo_tog: behavior_mo_tog {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          flavor = "hold-preferred";
+          tapping-term-ms = <200>;
+          bindings = <&mo>, <&tog>;
+      };
+
+      lph: lph {
+          compatible = "zmk,behavior-mod-morph";
+          label = "lph";
+          #binding-cells = <0>;
+          bindings = <&kp LPAR>, <&kp HASH>;
+          mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+      };
     };
 
   keymap {
     compatible = "zmk,keymap";
+    
+    // TODO: add these to some layers: HOME, END, PG_UP, PG_DN
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp AT    &kp EXCL  &kp EQUAL &lph     &kp RPAR   &kp PRCNT &tog NUM                                                           &mo MOD &kp AMPS &kp STAR &kp MINUS &kp PLUS &kp DLLR &kp CARET
+        &kp TAB   &kp Q     &kp W     &kp E    &kp R      &kp T     &none                                                              &none   &kp Y    &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp LCTRL &kp A     &kp S     &kp D    &kp F      &kp G     &none           &kp LCTRL   &kp DEL  &kp ESC   &kp RCTRL           &none   &kp H    &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X     &kp C    &kp V      &kp B                                 &kp LALT &kp RALT                              &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FN    &kp GRAVE &kp CAPS  &kp LEFT &kp RIGHT                   &kp BSPC MO_TOG(NUM) &kp LGUI &kp RGUI &kp ENTER &kp SPACE                   &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FN
       >;
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+
+        &kp F1   &kp F2     &kp F3     &kp F4      &kp F5     &kp F6     &tog NUM                                          &mo MOD   &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12
+        &trans   &kp MCLCK  &kp LA(LS(N5)) &kp LA(LS(N1))  &kp LA(LS(N3)) &kp LA(LS(N7)) &none                             &none     &kp LA(LS(N6)) &kp LA(LS(N2)) &kp LA(LS(N0)) &kp LA(LS(N4)) &kp LA(LS(N8)) &trans
+        &trans   &kp N9     &kp N5     &kp N1      &kp N3     &kp N7     &none        &trans &trans &trans &trans          &none     &kp N6     &kp N2     &kp N0     &kp N4     &kp N8     &trans
+        &trans   &kp LA(N9) &kp LA(N5) &kp LA(N1)  &kp LA(N3) &kp LA(N7)                     &trans &trans                           &kp LA(N6) &kp LA(N2) &kp LA(N0) &kp LA(N4) &kp LA(N8) &trans
+        &trans   &trans     &trans     &trans      &trans                      &trans &trans &trans &trans &trans &trans                        &trans     &trans     &trans     &trans     &trans
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &kp F1 &kp F2    &kp F3 &kp F4 &kp F5 &kp F6 &tog NUM                                         &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &trans &kp MCLCK &trans &trans &trans &trans  &none                                           &none   &trans &trans &trans &trans  &trans  &kp C_VOL_UP
+        &trans &trans    &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none   &trans &trans &trans &trans  &trans  &kp C_VOL_DN
+        &trans &trans    &trans &trans &trans &trans                      &trans &trans                       &trans &trans &trans &trans  &trans  &trans
+        &trans &trans    &trans &trans &trans               &trans &trans &trans &trans &trans &trans                &trans &trans &trans  &trans  &trans
       >;
     };
     mod {
