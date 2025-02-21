@@ -66,10 +66,16 @@
     compatible = "zmk,keymap";
     
     // TODO: add these to some layers: HOME, END, PG_UP, PG_DN
+    // commentary:
+    // 1. swap plus and equal. make it left-to-right motion. plus on left, equal on right.
+    // 2. make top row of KP trans, because during number mode, I want to access the symbols
+    // 3. LA(LS(N1)) should be moved to FN layer
+    // 4. LA(N1) should be top - 1 row on KP layer, basically replacing LA(LS(N1))
+
 
     default_layer {
       bindings = <
-        &kp AT    &kp EXCL  &kp EQUAL &lph     &kp RPAR   &kp PRCNT &tog NUM                                                           &mo MOD &kp AMPS &kp STAR &kp MINUS &kp PLUS &kp DLLR &kp CARET
+        &kp AT    &kp EXCL  &kp PLUS  &lph     &kp RPAR   &kp PRCNT &tog NUM                                                           &mo MOD &kp AMPS &kp STAR &kp MINUS &kp EQUAL &kp DLLR &kp CARET
         &kp TAB   &kp Q     &kp W     &kp E    &kp R      &kp T     &none                                                              &none   &kp Y    &kp U    &kp I     &kp O    &kp P    &kp BSLH
         &kp LCTRL &kp A     &kp S     &kp D    &kp F      &kp G     &none           &kp LCTRL   &kp DEL  &kp ESC   &kp RCTRL           &none   &kp H    &kp J    &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X     &kp C    &kp V      &kp B                                 &kp LALT &kp RALT                              &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
@@ -79,17 +85,17 @@
     keypad {
       bindings = <
 
-        &kp F1   &kp F2     &kp F3     &kp F4      &kp F5     &kp F6     &tog NUM                                          &mo MOD   &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12
-        &trans   &kp MCLCK  &kp LA(LS(N5)) &kp LA(LS(N1))  &kp LA(LS(N3)) &kp LA(LS(N7)) &none                             &none     &kp LA(LS(N6)) &kp LA(LS(N2)) &kp LA(LS(N0)) &kp LA(LS(N4)) &kp LA(LS(N8)) &trans
+        &trans   &trans     &trans     &trans      &trans     &trans     &tog NUM                                          &mo MOD   &trans     &trans     &trans     &trans     &trans     &trans
+        &trans   &kp LA(N9) &kp LA(N5) &kp LA(N1)  &kp LA(N3) &kp LA(N7) &none                                             &none     &kp LA(N6) &kp LA(N2) &kp LA(N0) &kp LA(N4) &kp LA(N8) &trans
         &trans   &kp N9     &kp N5     &kp N1      &kp N3     &kp N7     &none        &trans &trans &trans &trans          &none     &kp N6     &kp N2     &kp N0     &kp N4     &kp N8     &trans
-        &trans   &kp LA(N9) &kp LA(N5) &kp LA(N1)  &kp LA(N3) &kp LA(N7)                     &trans &trans                           &kp LA(N6) &kp LA(N2) &kp LA(N0) &kp LA(N4) &kp LA(N8) &trans
+        &trans   &trans     &trans     &trans      &trans     &trans                     &trans &trans                               &trans     &trans     &trans     &trans     &trans     &trans
         &trans   &trans     &trans     &trans      &trans                      &trans &trans &trans &trans &trans &trans                        &trans     &trans     &trans     &trans     &trans
       >;
     };
     fn {
       bindings = <
         &kp F1 &kp F2    &kp F3 &kp F4 &kp F5 &kp F6 &tog NUM                                         &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &kp MCLCK &trans &trans &trans &trans  &none                                           &none   &trans &trans &trans &trans  &trans  &kp C_VOL_UP
+        &kp MCLCK &kp LA(LS(N9)) &kp LA(LS(N5)) &kp LA(LS(N1))  &kp LA(LS(N3)) &kp LA(LS(N7))  &none  &none   &kp LA(LS(N6)) &kp LA(LS(N2)) &kp LA(LS(N0)) &kp LA(LS(N4)) &kp LA(LS(N8))  &kp C_VOL_UP
         &trans &trans    &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none   &trans &trans &trans &trans  &trans  &kp C_VOL_DN
         &trans &trans    &trans &trans &trans &trans                      &trans &trans                       &trans &trans &trans &trans  &trans  &trans
         &trans &trans    &trans &trans &trans               &trans &trans &trans &trans &trans &trans                &trans &trans &trans  &trans  &trans
